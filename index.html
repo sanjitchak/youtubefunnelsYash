@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finest Clients - Predictable Sales Meetings</title>
-    <link rel="icon" type="image/png" href="https://finestclients.com/finestclientslogo.png">
+    <title>YouTube Funnels - Predictable Sales Meetings</title>
+    <link rel="icon" type="image/jpeg" href="youtubefunnel.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <!-- Suppress benign errors often caused by embedded video players and third-party scripts -->
@@ -71,7 +71,7 @@
         }
 
         ::selection {
-            background: #D4AF37;
+            background: #FF0000;
             color: #000
         }
 
@@ -98,7 +98,7 @@
         }
 
         :root {
-            --gold: #D4AF37;
+            --gold: #FF0000;
             --card: #111;
             --gray-300: #d1d5db;
             --gray-400: #9ca3af;
@@ -107,9 +107,9 @@
             --white-5: rgba(255, 255, 255, 0.05);
             --white-10: rgba(255, 255, 255, 0.1);
             --white-20: rgba(255, 255, 255, 0.2);
-            --gold-10: rgba(212, 175, 55, 0.1);
-            --gold-20: rgba(212, 175, 55, 0.2);
-            --gold-30: rgba(212, 175, 55, 0.3)
+            --gold-10: rgba(255, 0, 0, 0.1);
+            --gold-20: rgba(255, 0, 0, 0.2);
+            --gold-30: rgba(255, 0, 0, 0.3)
         }
 
         ::-webkit-scrollbar {
@@ -268,21 +268,25 @@
         }
 
         .logo {
-            font-size: 20px;
-            font-weight: 900;
-            letter-spacing: -0.05em;
-            color: #fff;
+            display: flex;
+            align-items: center;
+            width: 220px;
+            height: 68px;
             cursor: pointer
         }
 
         @media(min-width:768px) {
             .logo {
-                font-size: 24px
+                width: 280px;
+                height: 84px
             }
         }
 
-        .logo-accent {
-            color: var(--gold)
+        .brand-logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: left center
         }
 
         .nav-links {
@@ -554,8 +558,8 @@
         .hero-promise-box {
             margin: 0 auto 12px;
             padding: 16px 24px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid rgba(255, 0, 0, 0.3);
             border-radius: 12px;
             display: inline-block;
             backdrop-filter: blur(8px);
@@ -563,7 +567,7 @@
             color: #fff;
             font-size: 16px;
             line-height: 1.6;
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.1);
             max-width: 700px;
             white-space: normal;
         }
@@ -673,65 +677,6 @@
             border-color: #fff;
         }
         
-        /* As Featured In Section */
-        .featured-section {
-            background-color: #ffffff;
-            padding: 48px 16px;
-            text-align: center;
-        }
-
-        .featured-title {
-            color: #9ca3af;
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 36px;
-        }
-
-        .featured-logos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .featured-logo-link {
-            display: block;
-            transition: all 0.3s ease;
-        }
-
-        .featured-logo-link img {
-            height: 40px;
-            width: auto;
-            filter: grayscale(100%) opacity(60%);
-            transition: all 0.3s ease;
-        }
-
-        .featured-logo-link:hover img {
-            filter: grayscale(0%) opacity(100%);
-            transform: scale(1.05);
-        }
-
-        .featured-logo-dj img { height: 26px; }
-        .featured-logo-fox img { height: 38px; }
-        .featured-logo-cbs img { height: 42px; }
-        .featured-logo-abc img { height: 46px; }
-        .featured-logo-nbc img { height: 50px; }
-
-        @media(min-width: 768px) {
-            .featured-section { padding: 64px 24px; }
-            .featured-logos { gap: 64px; }
-            .featured-logo-dj img { height: 32px; }
-            .featured-logo-fox img { height: 44px; }
-            .featured-logo-cbs img { height: 50px; }
-            .featured-logo-abc img { height: 54px; }
-            .featured-logo-nbc img { height: 58px; }
-        }
-
         .section {
             padding: 64px 0
         }
@@ -888,7 +833,7 @@
             display: block;
         }
         .proof-card:hover {
-            box-shadow: 0 0.2em 1em rgba(0,0,0,0.15), 0 1em 2.5em rgba(0,0,0,0.25), 0 0 40px rgba(212,175,55,0.08);
+            box-shadow: 0 0.2em 1em rgba(0,0,0,0.15), 0 1em 2.5em rgba(0,0,0,0.25), 0 0 40px rgba(255, 0, 0,0.08);
         }
 
         @media(max-width:767px) {
@@ -1026,7 +971,6 @@
         }
         .filter-icon { flex-shrink: 0; font-size: 18px; margin-top: 2px; }
 
-        /* NEW FOUNDER SECTION UI */
         .founder-section-wrapper {
             text-align: left;
             max-width: 900px;
@@ -1116,7 +1060,6 @@
             color: #fff;
             border-color: #3B82F6;
         }
-        
         .founder-stats-grid {
             display: flex;
             flex-direction: column;
@@ -1142,7 +1085,6 @@
         }
         .founder-stat-num { font-size: 32px; font-weight: 800; color: #3B82F6; line-height: 1.2; }
         .founder-stat-label { font-size: 12px; color: #64748B; font-weight: 700; text-transform: uppercase; margin-top: 8px; letter-spacing: 0.5px;}
-
         .stat-box-yt {
             background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
             box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
@@ -1150,7 +1092,6 @@
         }
         .stat-box-yt .founder-stat-num { color: #fff; }
         .stat-box-yt .founder-stat-label { color: rgba(255,255,255,0.9); }
-
         .stat-box-ig {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             box-shadow: 0 4px 15px rgba(220, 39, 67, 0.2);
@@ -1158,15 +1099,12 @@
         }
         .stat-box-ig .founder-stat-num { color: #fff; }
         .stat-box-ig .founder-stat-label { color: rgba(255,255,255,0.9); }
-
         .founder-bio {
             color: var(--gray-300);
             font-size: 16px;
             line-height: 1.6;
         }
         .founder-bio p { margin-bottom: 16px; }
-
-        /* Social Link Pills */
         .social-pill-container {
             display: flex;
             flex-wrap: wrap;
@@ -1630,14 +1568,9 @@
         }
 
         .footer-brand {
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: -0.05em;
+            width: 260px;
+            height: 156px;
             margin-bottom: 16px
-        }
-
-        .footer-brand-accent {
-            color: var(--gold)
         }
 
         .footer-desc {
@@ -1881,7 +1814,7 @@
             border: 1px solid var(--gold-30);
             border-radius: 24px;
             padding: 40px 32px;
-            box-shadow: 0 0 80px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 0 80px rgba(255, 0, 0, 0.15);
             cursor: default
         }
 
@@ -2097,7 +2030,9 @@
     <div id="landingPage">
         <nav id="navbar" class="navbar">
             <div class="navbar-inner">
-                <div class="logo" onclick="scrollToSection('home')">FINEST<span class="logo-accent">CLIENTS</span></div>
+                <div class="logo" onclick="scrollToSection('home')">
+                    <img src="youtubefunnels-logo.png" alt="YouTube Funnels" class="brand-logo-img">
+                </div>
                 <div class="nav-links">
                     <button onclick="scrollToSection('home')" class="nav-link">HOME</button>
                     <button onclick="scrollToSection('proof')" class="nav-link">PROOF</button>
@@ -2162,30 +2097,6 @@
             </div>
         </section>
 
-        <!-- 2. AS FEATURED IN SECTION -->
-        <section class="featured-section">
-            <div class="container fade-in">
-                <h3 class="featured-title">As Featured In</h3>
-                <div class="featured-logos">
-                    <div class="featured-logo-link featured-logo-fox">
-                        <img src="http://finestclients.com/asset/fox-removebg-preview.png" alt="Fox">
-                    </div>
-                    <div class="featured-logo-link featured-logo-abc">
-                        <img src="http://finestclients.com/asset/abc-removebg-preview.png" alt="ABC">
-                    </div>
-                    <div class="featured-logo-link featured-logo-cbs">
-                        <img src="http://finestclients.com/asset/cbs-removebg-preview.png" alt="CBS">
-                    </div>
-                    <div class="featured-logo-link featured-logo-nbc">
-                        <img src="http://finestclients.com/asset/nbc-removebg-preview.png" alt="NBC">
-                    </div>
-                    <div class="featured-logo-link featured-logo-dj">
-                        <img src="http://finestclients.com/asset/digitaljournal.webp" alt="Digital Journal">
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- 3. PROOF SECTION STACKING CARDS -->
         <section id="proof" class="proof-section section-border-b">
             <div class="proof-header fade-in">
@@ -2201,7 +2112,7 @@
                         <span class="proof-card-num">1</span>
                         <div class="proof-card-img-wrap">
                             <div class="proof-img-title">Arun Sharma, CAT Career Coaching</div>
-                            <img src="https://finestclients.com/asset/arun.jpg" alt="Arun Sharma YouTube Analytics">
+                            <img src="asset/arun.jpg" alt="Arun Sharma YouTube Analytics">
                         </div>
                     </a>
                 </li>
@@ -2212,7 +2123,7 @@
                         <span class="proof-card-num">2</span>
                         <div class="proof-card-img-wrap">
                             <div class="proof-img-title">Authority IO, Online Business Coaching</div>
-                            <img src="https://finestclients.com/asset/authority.jpg" alt="Authority IO YouTube Analytics">
+                            <img src="asset/authority.jpg" alt="Authority IO YouTube Analytics">
                         </div>
                     </a>
                 </li>
@@ -2223,7 +2134,7 @@
                         <span class="proof-card-num">3</span>
                         <div class="proof-card-img-wrap">
                             <div class="proof-img-title">Ryan Jackson, B2B Service Operations Coach</div>
-                            <img src="https://finestclients.com/asset/ryan.jpg" alt="Ryan Jackson YouTube Analytics">
+                            <img src="asset/ryan.jpg" alt="Ryan Jackson YouTube Analytics">
                         </div>
                     </a>
                 </li>
@@ -2385,19 +2296,19 @@
             </div>
         </section>
 
-        <!-- WHO WE ARE / FOUNDER -->
+        <!-- WHO WE ARE / FINEST EDIT PROOF -->
         <section class="section" style="background:#000">
             <div class="container">
                 <div class="fade-in founder-section-wrapper">
                     <p class="founder-section-label">BUILT BY SOMEONE WHO'S DONE IT</p>
-                    <h3 class="founder-title-name">Mousam Chatterjee</h3>
-                    <p class="founder-title-role">FOUNDER, FINEST CLIENTS</p>
+                    <h3 class="founder-title-name">Yash Sharma</h3>
+                    <p class="founder-title-role">FINEST EDIT</p>
 
                     <div class="founder-profile-card">
                         <div class="founder-header">
                             <div class="founder-left-col">
-                                <img src="https://finestclients.com/asset/mousam.jpeg" alt="Mousam Chatterjee" class="founder-avatar">
-                                <a href="https://www.linkedin.com/in/mousamch/" target="_blank" rel="noopener noreferrer" class="founder-connect-btn">
+                                <img src="yash.jpeg" alt="Yash Sharma" class="founder-avatar">
+                                <a href="https://www.linkedin.com/in/yash-sharma-finestedit/" target="_blank" rel="noopener noreferrer" class="founder-connect-btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                                     Connect on LinkedIn
                                 </a>
@@ -2687,7 +2598,9 @@
             <div class="container">
                 <div class="footer-grid">
                     <div>
-                        <div class="footer-brand">FINEST<span class="footer-brand-accent">CLIENTS</span></div>
+                        <div class="footer-brand">
+                            <img src="youtubefunnels-logo.png" alt="YouTube Funnels" class="brand-logo-img">
+                        </div>
                         <p class="footer-desc">We build YouTube systems that make money for coaches and consultants.</p>
                     </div>
                     <div class="footer-nav">
@@ -2708,8 +2621,8 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>© <span id="currentYear"></span> Finest Clients. All rights reserved.</p>
-                    <p>Designed for Excellence</p>
+                    <p>© <span id="currentYear"></span> YouTube Funnels. All rights reserved.</p>
+                    <p>Built for YouTube-powered growth</p>
                 </div>
             </div>
         </footer>
@@ -2734,15 +2647,15 @@
             <p>For the purposes of this Privacy Policy:</p>
             <ul>
                 <li><strong>Account</strong> means a unique account created for You to access our Service.</li>
-                <li><strong>Company</strong> refers to <strong>Finest Clients</strong>.</li>
+                <li><strong>Company</strong> refers to <strong>YouTube Funnels</strong>.</li>
                 <li><strong>Country</strong> refers to: <strong>USA</strong></li>
-                <li><strong>Website</strong> refers to <strong>Finest Clients</strong>, accessible from <a href="https://finestclients.com/">https://finestclients.com/</a></li>
+                <li><strong>Website</strong> refers to <strong>YouTube Funnels</strong>, accessible from <a href="https://youtubefunnels.com/">https://youtubefunnels.com/</a></li>
                 <li><strong>You</strong> means the individual accessing or using the Service.</li>
             </ul>
             <h2>Contact Us</h2>
             <p>If you have any questions about this Privacy Policy, You can contact us:</p>
             <ul>
-                <li> mousam@finestclients.com</li>
+                <li> info@youtubefunnels.com</li>
             </ul>
         </div>
     </div>
@@ -2762,10 +2675,10 @@
             <h3>Definitions</h3>
             <p>For the purposes of these Terms and Conditions:</p>
             <ul>
-                <li><strong>Company</strong> refers to <strong>Finest Clients</strong>.</li>
+                <li><strong>Company</strong> refers to <strong>YouTube Funnels</strong>.</li>
                 <li><strong>Country</strong> refers to: <strong>USA</strong></li>
                 <li><strong>Service</strong> refers to the Website.</li>
-                <li><strong>Website</strong> refers to <strong>Finest Clients</strong>, accessible from <a href="https://finestclients.com/">https://finestclients.com/</a></li>
+                <li><strong>Website</strong> refers to <strong>YouTube Funnels</strong>, accessible from <a href="https://youtubefunnels.com/">https://youtubefunnels.com/</a></li>
                 <li><strong>You</strong> means the individual accessing or using the Service.</li>
             </ul>
             <h2>Acknowledgment</h2>
@@ -2774,7 +2687,7 @@
             <h2>Contact Us</h2>
             <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
             <ul>
-                <li>By email: mousam@finestclients.com</li>
+                <li>By email: info@youtubefunnels.com</li>
             </ul>
         </div>
     </div>
@@ -2790,7 +2703,7 @@
         <div class="legal-content">
             <div class="refund-highlight">
                 <h2>Our Commitment to Fairness</h2>
-                <p>At Finest Clients, our relationships are built on trust, transparency, and mutual success. We believe in clear expectations and accountable partnerships.</p>
+                <p>At YouTube Funnels, our relationships are built on trust, transparency, and mutual success. We believe in clear expectations and accountable partnerships.</p>
                 <p style="color:var(--gray-400);font-size:18px">Therefore, our refund policy is strictly governed by the terms of our service agreements.</p>
             </div>
             <h3>Service Terms</h3>
@@ -2804,7 +2717,7 @@
             </ul>
             <h3>Contact Us</h3>
             <p>For any questions regarding your contract or to start a discussion about results, please contact us at:</p>
-            <p>mousam@finestclients.com</p>
+            <p>info@youtubefunnels.com</p>
         </div>
     </div>
 
@@ -2816,7 +2729,7 @@
         // CONFIGURATION - UPDATE THIS URL
         // ============================================
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwW-pjnzUijLDIdjhb2PMzNHikyu6gEXoe6bgk4_DVLSs-CmpoxHUryh2fiKHt6n6LoOQ/exec';
-        const CALENDLY_URL = 'https://calendly.com/mousam-finestclients/discovery';
+        const CALENDLY_URL = 'https://calendly.com/youtube-funnels/discovery';
         // ============================================
 
         let mobileMenuOpen = false;
@@ -2946,7 +2859,7 @@
                         body: JSON.stringify({
                             name: name,
                             email: email,
-                            source: 'Finest Clients Landing Page'
+                            source: 'YouTube Funnels Landing Page'
                         })
                     });
                 }
@@ -3048,7 +2961,7 @@
                     BFECC: true,
                     resolution: 0.5,
                     isBounce: false,
-                    colors: ['#D4AF37', '#fef08a', '#4b5563'],
+                    colors: ['#FF0000', '#FF4D4D', '#4b5563'],
                     autoDemo: true,
                     autoSpeed: 0.6,
                     autoIntensity: 2.5,
