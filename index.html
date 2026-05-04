@@ -922,12 +922,15 @@
 
         .work-tile {
             position: relative;
+            display: block;
             overflow: hidden;
             min-height: 220px;
+            width: 100%;
             border-radius: 0;
             border: 1px solid rgba(255,255,255,0.08);
             background: #070707;
             box-shadow: 0 18px 36px rgba(0,0,0,0.45);
+            cursor: pointer;
         }
 
         @media(min-width: 760px) {
@@ -1968,13 +1971,44 @@
             max-width: 896px
         }
 
-        .modal video {
+        .modal video,
+        .modal img {
             width: 100%;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             cursor: default;
             border: 1px solid var(--white-10)
+        }
+
+        .work-modal {
+            z-index: 180;
+            background: rgba(0, 0, 0, 0.92);
+        }
+
+        .work-modal-content {
+            max-width: min(1180px, 94vw);
+            max-height: 88vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .work-modal-media {
+            width: 100%;
+            max-height: 88vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .work-modal-media img,
+        .work-modal-media video {
+            width: auto;
+            max-width: 100%;
+            max-height: 88vh;
+            object-fit: contain;
+            background: #000;
         }
 
         .modal-close {
@@ -2349,6 +2383,19 @@
         </div>
     </div>
 
+    <div id="workModal" class="modal work-modal" onclick="closeWorkModal()">
+        <div class="modal-content work-modal-content" onclick="event.stopPropagation()">
+            <button onclick="closeWorkModal()" class="modal-close" aria-label="Close preview">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div id="workModalMedia" class="work-modal-media"></div>
+        </div>
+    </div>
+
     <div id="landingPage">
         <nav id="navbar" class="navbar">
             <div class="navbar-inner">
@@ -2540,31 +2587,31 @@
                     <h2 class="section-title" style="font-size:clamp(44px, 8vw, 112px); font-weight:900; line-height:.95;">Our Known Work</h2>
                 </div>
                 <div class="work-grid fade-in">
-                    <a class="work-tile wide" href="casestudypictures/chandra.avif" target="_blank" rel="noopener noreferrer">
+                    <a class="work-tile wide" href="casestudypictures/chandra.avif" onclick="event.preventDefault(); openWorkModal('casestudypictures/chandra.avif', 'image', 'Tollay Premium Tea creative')">
                         <img src="casestudypictures/chandra.avif" alt="Tollay Premium Tea creative">
                         <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
-                    <a class="work-tile wide" href="casestudypictures/anoop.avif" target="_blank" rel="noopener noreferrer">
+                    <a class="work-tile wide" href="casestudypictures/anoop.avif" onclick="event.preventDefault(); openWorkModal('casestudypictures/anoop.avif', 'image', 'Dhanwantri Pharmaceutical creative')">
                         <img src="casestudypictures/anoop.avif" alt="Dhanwantri Pharmaceutical creative">
                         <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
-                    <a class="work-tile tall" href="casestudypictures/home1.mp4" target="_blank" rel="noopener noreferrer">
+                    <a class="work-tile tall" href="casestudypictures/home1.mp4" onclick="event.preventDefault(); openWorkModal('casestudypictures/home1.mp4', 'video', 'Munshi Panna video')">
                         <video src="casestudypictures/home1.mp4" muted loop playsinline autoplay preload="metadata"></video>
                         <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
-                    <a class="work-tile wide" href="casestudypictures/chandraprakash.avif" target="_blank" rel="noopener noreferrer">
+                    <a class="work-tile wide" href="casestudypictures/chandraprakash.avif" onclick="event.preventDefault(); openWorkModal('casestudypictures/chandraprakash.avif', 'image', 'Chandraprakash campaign creative')">
                         <img src="casestudypictures/chandraprakash.avif" alt="Chandraprakash campaign creative">
                         <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
-                    <a class="work-tile wide" href="casestudypictures/premium.avif" target="_blank" rel="noopener noreferrer">
+                    <a class="work-tile wide" href="casestudypictures/premium.avif" onclick="event.preventDefault(); openWorkModal('casestudypictures/premium.avif', 'image', 'Tollay Premium mountain campaign creative')">
                         <img src="casestudypictures/premium.avif" alt="Tollay Premium mountain campaign creative">
                         <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
-                    <a class="work-tile wide" href="casestudypictures/home2.mp4" target="_blank" rel="noopener noreferrer">
+                    <a class="work-tile wide" href="casestudypictures/home2.mp4" onclick="event.preventDefault(); openWorkModal('casestudypictures/home2.mp4', 'video', 'Case study video')">
                         <video src="casestudypictures/home2.mp4" muted loop playsinline autoplay preload="metadata"></video>
                         <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
-                    <a class="work-tile wide" href="casestudypictures/home3.mp4" target="_blank" rel="noopener noreferrer">
+                    <a class="work-tile wide" href="casestudypictures/home3.mp4" onclick="event.preventDefault(); openWorkModal('casestudypictures/home3.mp4', 'video', 'Case study video')">
                         <video src="casestudypictures/home3.mp4" muted loop playsinline autoplay preload="metadata"></video>
                         <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
@@ -3284,6 +3331,40 @@
             }
         });
 
+        function openWorkModal(src, type, label) {
+            const modal = document.getElementById('workModal');
+            const media = document.getElementById('workModalMedia');
+            media.innerHTML = '';
+
+            if (type === 'video') {
+                const video = document.createElement('video');
+                video.src = src;
+                video.controls = true;
+                video.autoplay = true;
+                video.playsInline = true;
+                video.setAttribute('aria-label', label || 'Case study video');
+                media.appendChild(video);
+            } else {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = label || 'Case study image';
+                media.appendChild(img);
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeWorkModal() {
+            const modal = document.getElementById('workModal');
+            const media = document.getElementById('workModalMedia');
+            modal.classList.remove('active');
+            media.innerHTML = '';
+            if (!document.getElementById('optinModal').classList.contains('active') && !mobileMenuOpen) {
+                document.body.style.overflow = 'unset';
+            }
+        }
+
         async function handleOptinSubmit(event) {
             event.preventDefault();
 
@@ -3339,6 +3420,7 @@
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
+                closeWorkModal();
                 closeOptinModal();
             }
         });
