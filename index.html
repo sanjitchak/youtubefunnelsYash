@@ -814,9 +814,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             text-align: center;
-            box-shadow: 0 16px 34px rgba(0,0,0,0.58);
+            aspect-ratio: 1;
             transition: transform .3s, box-shadow .3s;
         }
 
@@ -827,8 +827,9 @@
 
         .result-card-img {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
+            object-fit: contain;
             border-radius: 28px;
             filter: drop-shadow(0 18px 28px rgba(255,255,255,0.08));
         }
@@ -953,8 +954,16 @@
             width: 100%;
             height: 100%;
             min-height: inherit;
-            object-fit: cover;
             transition: transform .35s, filter .35s;
+        }
+
+        .work-tile img {
+            object-fit: contain;
+            background: #000;
+        }
+
+        .work-tile video {
+            object-fit: cover;
         }
 
         .work-tile:hover img,
@@ -978,6 +987,10 @@
             color: #fff;
             backdrop-filter: blur(4px);
             box-shadow: 0 0 30px rgba(0,0,0,0.35);
+        }
+
+        .work-tile:not(.video-tile) .play-badge {
+            display: none;
         }
 
         .play-badge::before {
@@ -1074,8 +1087,8 @@
         @media(max-width:767px) {
             .proof-section {
                 --card-height: auto;
-                --card-margin: 24px;
-                --card-top-offset: 1.2em;
+                --card-margin: 18px;
+                --card-top-offset: 0px;
             }
         }
 
@@ -1103,6 +1116,26 @@
             }
         }
 
+        @media(max-width:767px) {
+            .proof-header {
+                padding: 48px 22px 24px;
+            }
+
+            .proof-section h2 {
+                font-size: 34px;
+                line-height: 1.08;
+                max-width: 100%;
+                overflow-wrap: normal;
+            }
+
+            .proof-subtitle {
+                font-size: 17px;
+                max-width: 340px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
         .proof-subtitle {
             font-size: 18px;
             font-weight: 500;
@@ -1127,9 +1160,9 @@
         }
         @media(max-width:767px) {
             .proof-stack { 
-                width: 95%; 
+                width: calc(100% - 32px); 
                 grid-template-rows: auto;
-                padding-bottom: 32px;
+                padding-bottom: 24px;
             }
         }
 
@@ -1164,7 +1197,8 @@
         @media(max-width:767px) {
             .proof-card {
                 display: block;
-                height: 70vh;
+                height: 54vh;
+                min-height: 420px;
             }
         }
 
@@ -2589,29 +2623,25 @@
                 <div class="work-grid fade-in">
                     <a class="work-tile wide" href="casestudypictures/chandra.avif" onclick="event.preventDefault(); openWorkModal('casestudypictures/chandra.avif', 'image', 'Tollay Premium Tea creative')">
                         <img src="casestudypictures/chandra.avif" alt="Tollay Premium Tea creative">
-                        <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
                     <a class="work-tile wide" href="casestudypictures/anoop.avif" onclick="event.preventDefault(); openWorkModal('casestudypictures/anoop.avif', 'image', 'Dhanwantri Pharmaceutical creative')">
                         <img src="casestudypictures/anoop.avif" alt="Dhanwantri Pharmaceutical creative">
-                        <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
-                    <a class="work-tile tall" href="casestudypictures/home1.mp4" onclick="event.preventDefault(); openWorkModal('casestudypictures/home1.mp4', 'video', 'Munshi Panna video')">
+                    <a class="work-tile video-tile tall" href="casestudypictures/home1.mp4" onclick="event.preventDefault(); openWorkModal('casestudypictures/home1.mp4', 'video', 'Munshi Panna video')">
                         <video src="casestudypictures/home1.mp4" muted loop playsinline autoplay preload="metadata"></video>
                         <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
                     <a class="work-tile wide" href="casestudypictures/chandraprakash.avif" onclick="event.preventDefault(); openWorkModal('casestudypictures/chandraprakash.avif', 'image', 'Chandraprakash campaign creative')">
                         <img src="casestudypictures/chandraprakash.avif" alt="Chandraprakash campaign creative">
-                        <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
                     <a class="work-tile wide" href="casestudypictures/premium.avif" onclick="event.preventDefault(); openWorkModal('casestudypictures/premium.avif', 'image', 'Tollay Premium mountain campaign creative')">
                         <img src="casestudypictures/premium.avif" alt="Tollay Premium mountain campaign creative">
-                        <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
-                    <a class="work-tile wide" href="casestudypictures/home2.mp4" onclick="event.preventDefault(); openWorkModal('casestudypictures/home2.mp4', 'video', 'Case study video')">
+                    <a class="work-tile video-tile wide" href="casestudypictures/home2.mp4" onclick="event.preventDefault(); openWorkModal('casestudypictures/home2.mp4', 'video', 'Case study video')">
                         <video src="casestudypictures/home2.mp4" muted loop playsinline autoplay preload="metadata"></video>
                         <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
-                    <a class="work-tile wide" href="casestudypictures/home3.mp4" onclick="event.preventDefault(); openWorkModal('casestudypictures/home3.mp4', 'video', 'Case study video')">
+                    <a class="work-tile video-tile wide" href="casestudypictures/home3.mp4" onclick="event.preventDefault(); openWorkModal('casestudypictures/home3.mp4', 'video', 'Case study video')">
                         <video src="casestudypictures/home3.mp4" muted loop playsinline autoplay preload="metadata"></video>
                         <span class="play-badge" aria-hidden="true">&nbsp;</span>
                     </a>
