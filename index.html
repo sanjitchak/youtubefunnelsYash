@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Funnels - Predictable Sales Meetings</title>
     <link rel="icon" type="image/jpeg" href="youtubefunnel.jpeg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
     <!-- Suppress benign errors often caused by embedded video players and third-party scripts -->
     <script>
@@ -732,6 +732,328 @@
             max-width: 640px;
             margin: 0 auto;
             font-size: 18px;
+        }
+
+        .showcase-section {
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px),
+                radial-gradient(circle at 50% 0%, rgba(255,0,0,0.13), transparent 34%),
+                #000;
+            background-size: 96px 96px, 96px 96px, 100% 100%, auto;
+        }
+
+        .showcase-section::before,
+        .showcase-section::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 140px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .showcase-section::before {
+            top: 0;
+            background: linear-gradient(#000, transparent);
+        }
+
+        .showcase-section::after {
+            bottom: 0;
+            background: linear-gradient(transparent, #000);
+        }
+
+        .showcase-section > .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .youtube-heading {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .youtube-heading svg {
+            width: 58px;
+            height: 42px;
+            flex: 0 0 auto;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.18));
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 26px;
+            max-width: 1040px;
+            margin: 48px auto 0;
+        }
+
+        @media(min-width: 640px) {
+            .results-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media(min-width: 1024px) {
+            .results-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .result-card {
+            min-height: 0;
+            background: transparent;
+            color: #050505;
+            border-radius: 26px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            box-shadow: 0 16px 34px rgba(0,0,0,0.58);
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .result-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 22px 44px rgba(0,0,0,0.68), 0 0 28px rgba(255,0,0,0.18);
+        }
+
+        .result-card-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 28px;
+            filter: drop-shadow(0 18px 28px rgba(255,255,255,0.08));
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-top: 52px;
+            border: 1px solid rgba(255,255,255,0.36);
+            border-left: 0;
+            border-right: 0;
+            background: rgba(0,0,0,0.48);
+        }
+
+        @media(min-width: 900px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .testimonial-panel {
+            min-height: 430px;
+            padding: 64px 26px 56px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .testimonial-panel:first-child {
+            border-top: 0;
+        }
+
+        @media(min-width: 900px) {
+            .testimonial-panel {
+                border-top: 0;
+                border-left: 1px solid rgba(255,255,255,0.36);
+            }
+
+            .testimonial-panel:first-child {
+                border-left: 0;
+            }
+        }
+
+        .testimonial-avatar {
+            width: 92px;
+            height: 92px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 22px;
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.18), 0 12px 26px rgba(0,0,0,0.48);
+        }
+
+        .testimonial-name {
+            font-size: 25px;
+            font-weight: 800;
+            line-height: 1.05;
+            color: #fff;
+        }
+
+        .testimonial-role,
+        .testimonial-stat {
+            font-size: 15px;
+            line-height: 1.3;
+            color: #fff;
+        }
+
+        .testimonial-quote {
+            max-width: 340px;
+            margin-top: 26px;
+            color: #f5f5f5;
+            font-size: 21px;
+            line-height: 1.65;
+            font-weight: 400;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            margin-top: 56px;
+            background: #000;
+        }
+
+        @media(min-width: 760px) {
+            .work-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .work-tile {
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+            border-radius: 0;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: #070707;
+            box-shadow: 0 18px 36px rgba(0,0,0,0.45);
+        }
+
+        @media(min-width: 760px) {
+            .work-tile {
+                min-height: 300px;
+            }
+
+            .work-tile.wide {
+                grid-column: span 1;
+            }
+
+            .work-tile.tall {
+                grid-column: 3;
+                grid-row: span 2;
+            }
+        }
+
+        .work-tile img,
+        .work-tile video {
+            width: 100%;
+            height: 100%;
+            min-height: inherit;
+            object-fit: cover;
+            transition: transform .35s, filter .35s;
+        }
+
+        .work-tile:hover img,
+        .work-tile:hover video {
+            transform: scale(1.035);
+            filter: brightness(1.08);
+        }
+
+        .play-badge {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.28);
+            color: #fff;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 0 30px rgba(0,0,0,0.35);
+        }
+
+        .play-badge::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-left: 18px solid currentColor;
+            margin-left: 5px;
+        }
+
+        .brand-wall {
+            margin-top: 48px;
+            padding: 44px 28px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035));
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 24px 50px rgba(0,0,0,0.38);
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            align-items: center;
+        }
+
+        @media(min-width: 640px) {
+            .brand-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media(min-width: 920px) {
+            .brand-grid {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+            }
+        }
+
+        .brand-item {
+            min-height: 108px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            background: rgba(255,255,255,0.94);
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .brand-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(255,0,0,0.14);
+        }
+
+        .brand-item img {
+            width: 100%;
+            max-width: 150px;
+            max-height: 76px;
+            object-fit: contain;
+        }
+
+        @media(max-width: 640px) {
+            .youtube-heading {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .showcase-section {
+                background-size: 68px 68px, 68px 68px, 100% 100%, auto;
+            }
+
+            .testimonial-quote {
+                font-size: 18px;
+            }
+
+            .brand-wall {
+                padding: 24px 14px;
+            }
         }
 
         /* Proof Section Stacking Cards */
@@ -2013,7 +2335,7 @@
                 <p id="optinError" class="optin-error">Please enter valid information</p>
                 <button type="submit" id="optinSubmit" class="optin-submit">
                     <span id="submitText">Continue to Book Call</span>
-                    <div id="submitSpinner" class="spinner" style="display:none"></div>
+                    <span id="submitSpinner" class="spinner" style="display:none"></span>
                 </button>
             </form>
             <p class="optin-privacy">
@@ -2139,6 +2461,148 @@
                     </a>
                 </li>
             </ul>
+        </section>
+
+        <!-- VIEW CASE STUDY RESULTS -->
+        <section id="client-results" class="section showcase-section section-border-b">
+            <div class="container" style="text-align:center">
+                <div class="fade-in">
+                    <p class="section-label">CLIENT RESULTS</p>
+                    <h2 class="section-title youtube-heading">
+                        <span>Check Out These Results From Our Clients</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48" aria-hidden="true">
+                            <path fill="#fff" d="M66.52 7.5a8.35 8.35 0 0 0-5.88-5.9C55.45.2 34.6.2 34.6.2S13.76.2 8.56 1.6A8.35 8.35 0 0 0 2.68 7.5C1.28 12.7 1.28 23.56 1.28 23.56s0 10.86 1.4 16.06a8.35 8.35 0 0 0 5.88 5.9c5.2 1.4 26.04 1.4 26.04 1.4s20.85 0 26.04-1.4a8.35 8.35 0 0 0 5.88-5.9c1.4-5.2 1.4-16.06 1.4-16.06s0-10.86-1.4-16.06Z"/>
+                            <path fill="#000" d="M28.1 33.7V13.42l17.82 10.14L28.1 33.7Z"/>
+                        </svg>
+                    </h2>
+                </div>
+                <div class="results-grid fade-in">
+                    <article class="result-card">
+                        <img src="viewscasestudy/hungryfam.avif" alt="Hungry Fam result card" class="result-card-img">
+                    </article>
+                    <article class="result-card">
+                        <img src="viewscasestudy/emma.avif" alt="Emma Ding result card" class="result-card-img">
+                    </article>
+                    <article class="result-card">
+                        <img src="viewscasestudy/Arun.avif" alt="Arun Sharma result card" class="result-card-img">
+                    </article>
+                    <article class="result-card">
+                        <img src="viewscasestudy/vinit.avif" alt="Vinit Kapoor result card" class="result-card-img">
+                    </article>
+                    <article class="result-card">
+                        <img src="viewscasestudy/rahil.avif" alt="Rahil Zafar result card" class="result-card-img">
+                    </article>
+                    <article class="result-card">
+                        <img src="viewscasestudy/madchem.avif" alt="MadChem Classes result card" class="result-card-img">
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- WRITTEN TESTIMONIALS -->
+        <section id="written-testimonials" class="section showcase-section section-border-b">
+            <div class="container" style="text-align:center">
+                <div class="fade-in">
+                    <p class="section-label">WRITTEN TESTIMONIALS</p>
+                    <h2 class="section-title">What Clients Say After The System Starts Working</h2>
+                </div>
+                <div class="testimonials-grid fade-in">
+                    <article class="testimonial-panel">
+                        <img src="writtentestimonials/hungryphoto.avif" alt="Hungry FAM" class="testimonial-avatar">
+                        <h3 class="testimonial-name">Hungry FAM</h3>
+                        <p class="testimonial-role">Content Creator</p>
+                        <p class="testimonial-stat">9.06M subscribers</p>
+                        <p class="testimonial-quote">"Joining forces with Finest Edit was the best decision for our YouTube channel. With their expertise, we hit two million subscribers faster than we ever imagined."</p>
+                    </article>
+                    <article class="testimonial-panel">
+                        <img src="writtentestimonials/gautamphoto.avif" alt="Gautam Sharma" class="testimonial-avatar">
+                        <h3 class="testimonial-name">Gautam Sharma</h3>
+                        <p class="testimonial-role">Creative Director</p>
+                        <p class="testimonial-stat">Gerbil Films</p>
+                        <p class="testimonial-quote">"The video editing services provided by FinestEdit were outstanding. They were always on time, never delayed any project, happy to be their customer."</p>
+                    </article>
+                    <article class="testimonial-panel">
+                        <img src="writtentestimonials/lalitphoto.avif" alt="Lalit Taneja" class="testimonial-avatar">
+                        <h3 class="testimonial-name">Lalit Taneja</h3>
+                        <p class="testimonial-role">Anxiety coach</p>
+                        <p class="testimonial-stat">50,000 followers</p>
+                        <p class="testimonial-quote">"Yash really helped us generate over 120 leads monthly through Instagram, and we also gained a massive number of followers. We're really happy with the professional culture and expertise shared by the team."</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE STUDY PICTURES -->
+        <section id="known-work" class="section showcase-section section-border-b">
+            <div class="container" style="text-align:center; max-width:1440px">
+                <div class="fade-in">
+                    <p class="section-label">CASE STUDY PICTURES</p>
+                    <h2 class="section-title" style="font-size:clamp(44px, 8vw, 112px); font-weight:900; line-height:.95;">Our Known Work</h2>
+                </div>
+                <div class="work-grid fade-in">
+                    <a class="work-tile wide" href="casestudypictures/chandra.avif" target="_blank" rel="noopener noreferrer">
+                        <img src="casestudypictures/chandra.avif" alt="Tollay Premium Tea creative">
+                        <span class="play-badge" aria-hidden="true">&nbsp;</span>
+                    </a>
+                    <a class="work-tile wide" href="casestudypictures/anoop.avif" target="_blank" rel="noopener noreferrer">
+                        <img src="casestudypictures/anoop.avif" alt="Dhanwantri Pharmaceutical creative">
+                        <span class="play-badge" aria-hidden="true">&nbsp;</span>
+                    </a>
+                    <a class="work-tile tall" href="casestudypictures/home1.mp4" target="_blank" rel="noopener noreferrer">
+                        <video src="casestudypictures/home1.mp4" muted loop playsinline autoplay preload="metadata"></video>
+                        <span class="play-badge" aria-hidden="true">&nbsp;</span>
+                    </a>
+                    <a class="work-tile wide" href="casestudypictures/chandraprakash.avif" target="_blank" rel="noopener noreferrer">
+                        <img src="casestudypictures/chandraprakash.avif" alt="Chandraprakash campaign creative">
+                        <span class="play-badge" aria-hidden="true">&nbsp;</span>
+                    </a>
+                    <a class="work-tile wide" href="casestudypictures/premium.avif" target="_blank" rel="noopener noreferrer">
+                        <img src="casestudypictures/premium.avif" alt="Tollay Premium mountain campaign creative">
+                        <span class="play-badge" aria-hidden="true">&nbsp;</span>
+                    </a>
+                    <a class="work-tile wide" href="casestudypictures/home2.mp4" target="_blank" rel="noopener noreferrer">
+                        <video src="casestudypictures/home2.mp4" muted loop playsinline autoplay preload="metadata"></video>
+                        <span class="play-badge" aria-hidden="true">&nbsp;</span>
+                    </a>
+                    <a class="work-tile wide" href="casestudypictures/home3.mp4" target="_blank" rel="noopener noreferrer">
+                        <video src="casestudypictures/home3.mp4" muted loop playsinline autoplay preload="metadata"></video>
+                        <span class="play-badge" aria-hidden="true">&nbsp;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- BRAND WALL -->
+        <section id="brands" class="section showcase-section section-border-b">
+            <div class="container" style="text-align:center">
+                <div class="fade-in">
+                    <p class="section-label">BRANDS</p>
+                    <h2 class="section-title">Our Past Happy Clients</h2>
+                </div>
+                <div class="brand-wall fade-in">
+                    <div class="brand-grid">
+                        <div class="brand-item"><img src="asset/images/1.png" alt="Client brand logo 1"></div>
+                        <div class="brand-item"><img src="asset/images/2.png" alt="Client brand logo 2"></div>
+                        <div class="brand-item"><img src="asset/images/3.png" alt="Client brand logo 3"></div>
+                        <div class="brand-item"><img src="asset/images/4.png" alt="Client brand logo 4"></div>
+                        <div class="brand-item"><img src="asset/images/5.png" alt="Client brand logo 5"></div>
+                        <div class="brand-item"><img src="asset/images/6.png" alt="Client brand logo 6"></div>
+                        <div class="brand-item"><img src="asset/images/7.png" alt="Client brand logo 7"></div>
+                        <div class="brand-item"><img src="asset/images/8.png" alt="Client brand logo 8"></div>
+                        <div class="brand-item"><img src="asset/images/9.png" alt="Client brand logo 9"></div>
+                        <div class="brand-item"><img src="asset/images/10.png" alt="Client brand logo 10"></div>
+                        <div class="brand-item"><img src="asset/images/11.png" alt="Client brand logo 11"></div>
+                        <div class="brand-item"><img src="asset/images/12.png" alt="Client brand logo 12"></div>
+                        <div class="brand-item"><img src="asset/images/13.png" alt="Client brand logo 13"></div>
+                        <div class="brand-item"><img src="asset/images/14.png" alt="Client brand logo 14"></div>
+                        <div class="brand-item"><img src="asset/images/15.png" alt="Client brand logo 15"></div>
+                        <div class="brand-item"><img src="asset/images/16.png" alt="Client brand logo 16"></div>
+                        <div class="brand-item"><img src="asset/images/17.png" alt="Client brand logo 17"></div>
+                        <div class="brand-item"><img src="asset/images/18.png" alt="Client brand logo 18"></div>
+                        <div class="brand-item"><img src="asset/images/19.png" alt="Client brand logo 19"></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- WHO IS THIS FOR -->
@@ -2908,6 +3372,25 @@
         }, { threshold: 0.1 });
         
         document.querySelectorAll('.fade-in').forEach(el => { fadeObserver.observe(el) });
+
+        function revealVisibleFadeIns() {
+            document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.95 && rect.bottom > 0) {
+                    el.classList.add('visible');
+                    fadeObserver.unobserve(el);
+                }
+            });
+        }
+
+        window.addEventListener('load', () => {
+            requestAnimationFrame(revealVisibleFadeIns);
+            setTimeout(revealVisibleFadeIns, 250);
+        });
+
+        window.addEventListener('hashchange', () => {
+            setTimeout(revealVisibleFadeIns, 250);
+        });
         
         function handleProcessScroll() { 
             const c = document.getElementById('processContainer'); 
