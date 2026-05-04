@@ -49,6 +49,9 @@
         gtag('js', new Date());
         gtag('config', 'G-GFMCSHSLCE');
     </script>
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/tigwy9r9ev.js" async type="module"></script>
+    <script src="https://fast.wistia.com/embed/rrofe22uea.js" async type="module"></script>
     <style>
         *,
         *::before,
@@ -905,6 +908,49 @@
             font-size: 21px;
             line-height: 1.65;
             font-weight: 400;
+        }
+
+        .video-testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+            max-width: 760px;
+            margin: 48px auto 0;
+        }
+
+        @media(min-width: 760px) {
+            .video-testimonial-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .video-testimonial-card {
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 18px;
+            background: #050505;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.48), 0 0 34px rgba(255,0,0,0.08);
+        }
+
+        .video-testimonial-card wistia-player {
+            width: 100%;
+            display: block;
+        }
+
+        wistia-player[media-id='tigwy9r9ev']:not(:defined),
+        wistia-player[media-id='rrofe22uea']:not(:defined) {
+            background: center / contain no-repeat;
+            display: block;
+            filter: blur(5px);
+            padding-top: 177.78%;
+        }
+
+        wistia-player[media-id='tigwy9r9ev']:not(:defined) {
+            background-image: url('https://fast.wistia.com/embed/medias/tigwy9r9ev/swatch');
+        }
+
+        wistia-player[media-id='rrofe22uea']:not(:defined) {
+            background-image: url('https://fast.wistia.com/embed/medias/rrofe22uea/swatch');
         }
 
         .work-grid {
@@ -2175,248 +2221,10 @@
             }
         }
 
-        /* Email Optin Modal Styles */
-        .optin-modal {
-            position: fixed;
-            inset: 0;
-            z-index: 200;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(12px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity .3s, visibility .3s
-        }
-
-        .optin-modal.active {
-            opacity: 1;
-            visibility: visible
-        }
-
-        .optin-modal-content {
-            position: relative;
-            width: 100%;
-            max-width: 480px;
-            background: linear-gradient(135deg, #111 0%, #000 100%);
-            border: 1px solid var(--gold-30);
-            border-radius: 24px;
-            padding: 40px 32px;
-            box-shadow: 0 0 80px rgba(255, 0, 0, 0.15);
-            cursor: default
-        }
-
-        .optin-modal-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            color: var(--gray-500);
-            padding: 8px;
-            transition: color .3s;
-            background: none;
-            border: none;
-            cursor: pointer
-        }
-
-        .optin-modal-close:hover {
-            color: #fff
-        }
-
-        .optin-modal-icon {
-            width: 64px;
-            height: 64px;
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px
-        }
-
-        .optin-modal-icon svg {
-            color: #3B82F6
-        }
-
-        .optin-modal-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 8px
-        }
-
-        .optin-modal-subtitle {
-            color: var(--gray-400);
-            text-align: center;
-            margin-bottom: 32px;
-            font-size: 16px
-        }
-
-        .optin-form {
-            display: flex;
-            flex-direction: column;
-            gap: 16px
-        }
-
-        .optin-input-wrapper {
-            position: relative
-        }
-
-        .optin-input {
-            width: 100%;
-            padding: 16px 20px;
-            padding-left: 48px;
-            background: #1a1a1a;
-            border: 1px solid var(--white-20);
-            border-radius: 12px;
-            color: #fff;
-            font-size: 16px;
-            transition: all .3s;
-            outline: none
-        }
-
-        .optin-input:focus {
-            border-color: var(--gold);
-            box-shadow: 0 0 0 3px var(--gold-20)
-        }
-
-        .optin-input::placeholder {
-            color: var(--gray-500)
-        }
-
-        .optin-input-icon {
-            position: absolute;
-            left: 16px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--gray-500)
-        }
-
-        .optin-submit {
-            width: 100%;
-            padding: 16px 32px;
-            background: var(--gold);
-            color: #000;
-            font-weight: 700;
-            font-size: 18px;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all .3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px
-        }
-
-        .optin-submit:hover {
-            background: #fff;
-            transform: translateY(-2px)
-        }
-
-        .optin-submit:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none
-        }
-
-        .optin-submit .spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid transparent;
-            border-top-color: #000;
-            border-radius: 50%;
-            animation: spin 1s linear infinite
-        }
-
-        .optin-privacy {
-            text-align: center;
-            font-size: 12px;
-            color: var(--gray-500);
-            margin-top: 8px
-        }
-
-        .optin-privacy svg {
-            display: inline;
-            vertical-align: middle;
-            margin-right: 4px
-        }
-
-        .optin-error {
-            color: #ef4444;
-            font-size: 14px;
-            text-align: center;
-            display: none
-        }
-
-        .optin-error.show {
-            display: block
-        }
     </style>
 </head>
 
 <body>
-    <!-- Email Optin Modal -->
-    <div id="optinModal" class="optin-modal">
-        <div class="optin-modal-content" onclick="event.stopPropagation()">
-            <button onclick="closeOptinModal()" class="optin-modal-close">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            <div class="optin-modal-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-            </div>
-            <h3 class="optin-modal-title">Book Your Strategy Call</h3>
-            <p class="optin-modal-subtitle">Enter your details to secure your spot</p>
-
-            <form id="optinForm" class="optin-form" onsubmit="handleOptinSubmit(event)">
-                <div class="optin-input-wrapper">
-                    <svg class="optin-input-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    <input type="text" id="optinName" class="optin-input" placeholder="Enter your name" required>
-                </div>
-                <div class="optin-input-wrapper">
-                    <svg class="optin-input-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <input type="email" id="optinEmail" class="optin-input" placeholder="Enter your email address"
-                        required>
-                </div>
-                <p id="optinError" class="optin-error">Please enter valid information</p>
-                <button type="submit" id="optinSubmit" class="optin-submit">
-                    <span id="submitText">Continue to Book Call</span>
-                    <span id="submitSpinner" class="spinner" style="display:none"></span>
-                </button>
-            </form>
-            <p class="optin-privacy">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-                Your information is secure and will never be shared
-            </p>
-        </div>
-    </div>
-
     <div id="workModal" class="modal work-modal" onclick="closeWorkModal()">
         <div class="modal-content work-modal-content" onclick="event.stopPropagation()">
             <button onclick="closeWorkModal()" class="modal-close" aria-label="Close preview">
@@ -2441,7 +2249,7 @@
                     <button onclick="scrollToSection('proof')" class="nav-link">PROOF</button>
                     <button onclick="scrollToSection('process')" class="nav-link">PROCESS</button>
                     <button onclick="scrollToSection('faq')" class="nav-link">FAQ</button>
-                    <button onclick="openOptinModal()" class="nav-cta">Get Started</button>
+                    <a href="https://cal.com/youtube-funnels-fkqsbr/30min" target="_blank" rel="noopener noreferrer" class="nav-cta">Get Started</a>
                 </div>
                 <button id="menuBtn" class="menu-btn" onclick="toggleMobileMenu()">
                     <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
@@ -2464,7 +2272,7 @@
                 <button onclick="scrollToSection('proof'); toggleMobileMenu();" class="mobile-menu-link">Proof</button>
                 <button onclick="scrollToSection('process'); toggleMobileMenu();" class="mobile-menu-link">Process</button>
                 <button onclick="scrollToSection('faq'); toggleMobileMenu();" class="mobile-menu-link">FAQ</button>
-                <button onclick="openOptinModal(); toggleMobileMenu();" class="mobile-menu-cta">Get Started</button>
+                <a href="https://cal.com/youtube-funnels-fkqsbr/30min" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu();" class="mobile-menu-cta">Get Started</a>
             </div>
         </nav>
 
@@ -2493,7 +2301,7 @@
                     </div>
 
                     <div class="hero-buttons" style="margin-top: 32px; justify-content: center;">
-                        <button onclick="openOptinModal()" class="btn-primary">Book Your Strategy Call</button>
+                        <a href="https://cal.com/youtube-funnels-fkqsbr/30min" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Your Strategy Call</a>
                         <button onclick="scrollToSection('process')" class="btn-secondary">See How It Works</button>
                     </div>
                 </div>
@@ -2609,6 +2417,24 @@
                         <p class="testimonial-stat">50,000 followers</p>
                         <p class="testimonial-quote">"Yash really helped us generate over 120 leads monthly through Instagram, and we also gained a massive number of followers. We're really happy with the professional culture and expertise shared by the team."</p>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO TESTIMONIALS -->
+        <section class="section showcase-section section-border-b">
+            <div class="container" style="text-align:center">
+                <div class="fade-in">
+                    <p class="section-label">VIDEO TESTIMONIALS</p>
+                    <h2 class="section-title">More Client Wins, In Their Own Words</h2>
+                </div>
+                <div class="video-testimonial-grid fade-in">
+                    <div class="video-testimonial-card">
+                        <wistia-player media-id="tigwy9r9ev" aspect="0.5625"></wistia-player>
+                    </div>
+                    <div class="video-testimonial-card">
+                        <wistia-player media-id="rrofe22uea" aspect="0.5625"></wistia-player>
+                    </div>
                 </div>
             </div>
         </section>
@@ -3130,7 +2956,7 @@
             <div class="fade-in container" style="max-width:896px">
                 <h2>Stop Relying on Paid Ads, Referrals, or Cold DMs. Start Compounding Calls.</h2>
                 <p>Book a strategy call. We'll review your offer, your niche, and tell you exactly how many calls YouTube can generate for your business.</p>
-                <button onclick="openOptinModal()" class="cta-btn" style="margin-bottom: 24px;">Book Your Strategy Call</button>
+                <a href="https://cal.com/youtube-funnels-fkqsbr/30min" target="_blank" rel="noopener noreferrer" class="cta-btn" style="margin-bottom: 24px;">Book Your Strategy Call</a>
                 <p style="font-size: 14px; font-style: italic; margin-bottom: 0;">No pressure. No obligation. Just clarity on whether this is right for you.</p>
             </div>
         </section>
@@ -3266,13 +3092,6 @@
         // Set dynamic year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // ============================================
-        // CONFIGURATION - UPDATE THIS URL
-        // ============================================
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwW-pjnzUijLDIdjhb2PMzNHikyu6gEXoe6bgk4_DVLSs-CmpoxHUryh2fiKHt6n6LoOQ/exec';
-        const CALENDLY_URL = 'https://calendly.com/youtube-funnels/discovery';
-        // ============================================
-
         let mobileMenuOpen = false;
         function toggleMobileMenu() { 
             mobileMenuOpen = !mobileMenuOpen; 
@@ -3337,30 +3156,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' }) 
         }
 
-        // Email Optin Modal Functions
-        function openOptinModal() {
-            const modal = document.getElementById('optinModal');
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            setTimeout(() => {
-                document.getElementById('optinName').focus();
-            }, 100);
-        }
-
-        function closeOptinModal() {
-            const modal = document.getElementById('optinModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'unset';
-            document.getElementById('optinForm').reset();
-            document.getElementById('optinError').classList.remove('show');
-        }
-
-        document.getElementById('optinModal').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('optinModal')) {
-                closeOptinModal();
-            }
-        });
-
         function openWorkModal(src, type, label) {
             const modal = document.getElementById('workModal');
             const media = document.getElementById('workModalMedia');
@@ -3390,68 +3185,14 @@
             const media = document.getElementById('workModalMedia');
             modal.classList.remove('active');
             media.innerHTML = '';
-            if (!document.getElementById('optinModal').classList.contains('active') && !mobileMenuOpen) {
+            if (!mobileMenuOpen) {
                 document.body.style.overflow = 'unset';
-            }
-        }
-
-        async function handleOptinSubmit(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('optinName').value.trim();
-            const email = document.getElementById('optinEmail').value.trim();
-            const submitBtn = document.getElementById('optinSubmit');
-            const submitText = document.getElementById('submitText');
-            const spinner = document.getElementById('submitSpinner');
-            const errorEl = document.getElementById('optinError');
-
-            if (!name || name.length < 2) {
-                errorEl.textContent = 'Please enter your name';
-                errorEl.classList.add('show');
-                return;
-            }
-
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                errorEl.textContent = 'Please enter a valid email address';
-                errorEl.classList.add('show');
-                return;
-            }
-
-            errorEl.classList.remove('show');
-            submitBtn.disabled = true;
-            submitText.textContent = 'Processing...';
-            spinner.style.display = 'block';
-
-            try {
-                if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
-                    await fetch(GOOGLE_SCRIPT_URL, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            name: name,
-                            email: email,
-                            source: 'YouTube Funnels Landing Page'
-                        })
-                    });
-                }
-                const calendlyWithParams = CALENDLY_URL + '?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email);
-                window.location.href = calendlyWithParams;
-
-            } catch (error) {
-                console.error('Error:', error);
-                const calendlyWithParams = CALENDLY_URL + '?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email);
-                window.location.href = calendlyWithParams;
             }
         }
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeWorkModal();
-                closeOptinModal();
             }
         });
 
